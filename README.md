@@ -386,7 +386,8 @@ Planned ideas for this fork:
 
 ### Support
 
-If this project saves you time or you use it in your setup,
-you can support further development here:
+Did you find my work helpful? Consider supporting my work:
 
-<a href="https://www.buymeacoffee.com/controli" target="_blank"> <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"> </a>
+<a href="https://www.buymeacoffee.com/yourusername" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" alt="Buy Me A Coffee" height="40" >
+</a>
