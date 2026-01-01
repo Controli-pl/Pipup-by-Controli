@@ -22,7 +22,6 @@ This fork extends the original project with **Home Assistant–friendly features
   - [Persistent notifications panel](#persistent-notifications-panel)
   - [Actionable popups](#actionable-popups)
   - [Camera Control popup (PTZ)](#camera-control-popup-ptz)
-
 - [Roadmap](#roadmap)
 - [Support](#support)
 
