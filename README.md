@@ -1,6 +1,3 @@
-# Pipup-by-Controli
-Pipup modifed by Controli.pl
-
 # PiPup – Android TV overlay + Home Assistant camera control
 
 PiPup shows overlay popups on Android TV and integrates tightly with Home Assistant.  
