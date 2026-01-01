@@ -3,7 +3,7 @@
 PiPup is an Android TV overlay service that can display rich popups over any app.  
 This fork extends the original project with **Home Assistant–friendly features** like notification sounds, persistent tiles, actionable buttons and a **camera control popup with PTZ**.
 
-![Example popup](docs/images/screen2.png)
+![Example popup](docs/images/logo.png)
 
 ---
 
@@ -98,6 +98,7 @@ When a button is pressed, PiPup calls a callbackUrl with JSON:
 This maps perfectly to Home Assistant webhooks / REST automations.
 
 ### 4. Camera Control popup (PTZ)
+![Example popup](docs/images/screen2.png)
 Special popup mode with embedded WebView for camera stream.
 
 Uses the TV remote to send PTZ directions back to Home Assistant:
