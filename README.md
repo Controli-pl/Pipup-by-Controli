@@ -76,23 +76,16 @@ This fork focuses on **Home Assistant usage on Android TV** and adds:
 ### 2. Persistent notifications panel
 ![Example popup](docs/images/screen12.png)
 Popups can be marked as persistent and will appear as tiles in a top panel.
-
 Tiles survive app restarts (stored in SharedPreferences).
-
 Each persistent entry has:
-
 - notificationId
-
 - duration (optional auto‑expire)
-
 - timestamps to restore remaining time after reboot.
 
 ### 3. Actionable popups (buttons)
 ![Example popup](docs/images/screen8.png)
 Popups can include a list of actions with labels and IDs.
-
 Buttons are focusable and can be navigated by D‑pad.
-
 When a button is pressed, PiPup calls a callbackUrl with JSON:
 
 ```json
@@ -112,14 +105,11 @@ Uses the TV remote to send PTZ directions back to Home Assistant:
 up / down / left / right / OK.
 
 Popup size and position can be configured from HA.
-
 Proper cleanup to stop camera audio when the popup is closed.
 
 ## Installation
 Enable installing apps from unknown sources on your Android TV.
-
 Install the <a href="https://github.com/CyberIN-pl/Pipup-by-Controli/blob/main/releases/" target="_blank"> Pipup.apk </a> (e.g. adb install pipup.apk).
-
 Grant overlay permissions (SYSTEM_ALERT_WINDOW) - Display over other apps.
 
 ![Example popup](docs/images/uprawnienia.png)
@@ -371,17 +361,11 @@ Roadmap
 Planned ideas for this fork:
 
 - Multi‑camera view
-
   - 2×2 / 3×3 grid with multiple cameras.
-
   - D‑pad navigation between tiles, OK = enlarge selected camera.
-
 - Zoom in/out mapping (e.g. Volume Up/Down) where PTZ supports it.
-
 - Exportable Home Assistant blueprints for common scenarios (doorbell, motion, watchdog).
-
 - Optional MQTT control interface.
-
 
 
 ### Support
