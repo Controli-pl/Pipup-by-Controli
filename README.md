@@ -87,11 +87,12 @@ Buttons are focusable and can be navigated by D‑pad.
 
 When a button is pressed, PiPup calls a callbackUrl with JSON:
 
-json
+```json
 {
   "notificationId": "door_alert",
   "action": "open_gate"
 }
+```
 This maps perfectly to Home Assistant webhooks / REST automations.
 
 ### 4. Camera Control popup (PTZ)
