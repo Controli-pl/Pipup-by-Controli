@@ -280,3 +280,11 @@ text
 
 
 Made for Home Assistant & Android TV.
+
+## Support
+
+If this project helps you, you can support my work here:
+
+<a href="https://www.buymeacoffee.com/controli" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174">
+</a>
