@@ -6,7 +6,7 @@ Pipup modifed by Controli.pl
 PiPup shows overlay popups on Android TV and integrates tightly with Home Assistant.  
 This fork adds a **camera control popup**: live camera view + PTZ control from the TV remote.
 
-![Camera control popup](docs/images/camera-popup.png)
+![Camera control popup](docs/images/screen2.png)
 
 ## Features
 
