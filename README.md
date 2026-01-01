@@ -230,9 +230,10 @@ automation:
                 data:
                   name: "PiPup"
                   message: "User ignored the alert"
+```
 ## Camera Control popup (PTZ)
 The most advanced part: show a camera stream and control PTZ from the remote.
-```
+
 1. REST command
 ```text
 rest_command:
@@ -274,7 +275,7 @@ Fullscreen	1920	1080
 1/4 screen	480	270
 Example usage (3/4 screen, top‑right):
 
-text
+```text
 service: rest_command.pipup_camera_control
 data:
   title: "PTZ Camera"
@@ -283,8 +284,9 @@ data:
   height: 810
   position: 1
   duration: 120
+```
 2. PTZ webhook in Home Assistant
-text
+```text
 automation:
   - id: pipup_camera_ptz_control
     alias: "PiPup – camera PTZ control"
@@ -346,6 +348,7 @@ automation:
                   entity_id: camera.ptz_camera
                 data:
                   move_mode: GotoHome
+```
 Remote mapping:
 
 Remote button	Direction payload
@@ -372,6 +375,5 @@ Exportable Home Assistant blueprints for common scenarios (doorbell, motion, wat
 Optional MQTT control interface.
 
 Support
-If this project saves you time or you use it in your setup, you can support further development here:
 
-<a href="https://www.buymeacoffee.com/controli" target="_blank"> <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"> </a> ```
+If this project saves you time or you use it in your setup, you can support further development here: <a href="https://www.buymeacoffee.com/controli" target="_blank"> <img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"> </a> ```
