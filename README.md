@@ -59,12 +59,13 @@ This fork focuses on **Home Assistant usage on Android TV** and adds:
   - `"default"`, `"alarm"`, `"doorbell"`, `"none"`.
 - Sounds are played when the popup is shown.
 
-```json
+json
 {
   "title": "Doorbell",
   "message": "Someone is at the door",
   "sound": "doorbell"
 }
+
 2. Persistent notifications panel
 Popups can be marked as persistent and will appear as tiles in a top panel.
 
