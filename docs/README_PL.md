@@ -21,7 +21,7 @@ Ten fork rozszerza oryginalny projekt o **funkcje przyjazne dla Home Assistant**
 - [Instalacja](#instalacja)
 - [Integracja z Home Assistant](#integracja-z-home-assistant)
 - [Podstawowe wyskakujące okienko](#podstawowe-wystakujce-okienko)
-- [Panel stałych powiadomień](#panel-staylch-powiadomien)
+- [Panel stałych powiadomień](#panel-stayłch-powiadomień)
 - [Powiadomienie z akcjami](#powiadomienie-z-akcjami)
 - [Okienko sterowania kamerą (PTZ)](#okienko-sterowania-kamera)
 - [Plan rozwoju](#plan-rozwoju)
