@@ -74,7 +74,7 @@ This fork focuses on **Home Assistant usage on Android TV** and adds:
 ```
 
 ### 2. Persistent notifications panel
-![Example popup](docs/images/screen12.png)
+![Example popup](docs/images/screen12a.png)
 Popups can be marked as persistent and will appear as tiles in a top panel.
 Tiles survive app restarts (stored in SharedPreferences).
 Each persistent entry has:
@@ -83,7 +83,7 @@ Each persistent entry has:
 - timestamps to restore remaining time after reboot.
 
 ### 3. Actionable popups (buttons)
-![Example popup](docs/images/screen8.png)
+![Example popup](docs/images/screen8a.png)
 Popups can include a list of actions with labels and IDs.
 Buttons are focusable and can be navigated by D‑pad.
 When a button is pressed, PiPup calls a callbackUrl with JSON:
@@ -97,7 +97,6 @@ When a button is pressed, PiPup calls a callbackUrl with JSON:
 This maps perfectly to Home Assistant webhooks / REST automations.
 
 ### 4. Camera Control popup (PTZ)
-![Example popup](docs/images/screen2.png)
 Special popup mode with embedded WebView for camera stream.
 
 Uses the TV remote to send PTZ directions back to Home Assistant:
@@ -424,6 +423,15 @@ Planned ideas for this fork:
 - Exportable Home Assistant blueprints for common scenarios (doorbell, motion, watchdog).
 - Optional MQTT control interface.
 - Persistent notification animation (reminder)
+
+### Feedback
+
+Found a bug or have an idea?
+
+- Please open an issue in the **Issues** tab on GitHub.
+- Include your device model, Android version and app version, plus steps to reproduce the problem.
+
+Repository: https://github.com/Controli-pl/Pipup-by-Controli
 
 
 ### Support
