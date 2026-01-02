@@ -33,7 +33,7 @@ Możesz wywoływać wyskakujące okienka z Home Assistant (lub dowolnego klienta
 Domyślny port serwera: **7979**
 Domyślny punkt końcowy: `POST /notify`
 
-## Oryginalne funkcje
+## Oryginalne funkcje {#oryginalne}
 
 Oryginalny (źródło projektu PiPup: https://github.com/gmcmicken/PiPup) oferuje już:
 
@@ -48,7 +48,7 @@ Jeśli potrzebujesz tylko podstawowych okienek z obrazami/tekstem, nadal obowią
 
 ---
 
-## Ulepszenia w tym forku
+## Ulepszenia w tym forku {#ulepszenia}
 
 Ten fork koncentruje się na **korzystaniu z Home Assistant na Android TV** i dodaje:
 
@@ -99,7 +99,7 @@ góra / dół / lewo / prawo / OK.
 Rozmiar i położenie wyskakującego okienka można skonfigurować w HA.
 Prawidłowe czyszczenie, aby zatrzymać dźwięk z kamery po zamknięciu wyskakującego okienka.
 
-## Instalacja
+## Instalacja {#instalacja}
 Włącz instalowanie aplikacji z nieznanych źródeł na telewizorze z systemem Android.
 
 [Pobierz APK](https://github.com/Controli-pl/Pipup-by-Controli/releases/latest/download/pipup-controli.apk)
@@ -112,11 +112,11 @@ Udziel uprawnień do nakładki (SYSTEM_ALERT_WINDOW) — wyświetlanie na innych
 
 Upewnij się, że PiPup może działać jako usługa na pierwszym planie (bez agresywnych programów wyczerpujących baterię).
 
-## Integracja z Home Assistant
+## Integracja z Home Assistant {#integracja}
 Poniżej znajdują się praktyczne przykłady różnych funkcji.
 # Oczywiście zmień adres IP na poprawny! (dla Android TV i HA - do wywołania zwrotnego)
 
-### Podstawowe wyskakujące okienko
+### Podstawowe wyskakujące okienko {#podstawowe}
 Proste wyskakujące okienko JSON za pomocą polecenia rest_command:
 ```text
 rest_command:
@@ -142,7 +142,7 @@ data:
   duration: 8
   position: 5
 ```
-### Panel stałych powiadomień
+### Panel stałych powiadomień {#panel}
 Każdy stały element jest przechowywany z identyfikatorem powiadomienia i opcjonalnie może wygasnąć po upływie określonej liczby sekund.
 ```text
 rest_command:
@@ -211,7 +211,7 @@ Wyczyść wszystko:
   data: {}
 ```
 
-### Akcje wyskakujących okienek
+### Akcje wyskakujących okienek {#akcje}
 akcje są kodowane jako "id:Label|id2:Label2|...".
 
 ```text
@@ -273,7 +273,7 @@ automation:
                   message: "User ignored the alert"
 ```
 
-### Wyskakujące okienko sterowania kamerą (PTZ)
+### Okienko sterowania kamerą (PTZ) {#kamera}
 Wyświetl strumień z kamery i steruj PTZ zdalnie.
 
 1. Polecenie REST
@@ -401,7 +401,7 @@ Mapowanie zdalne:
 | Prawo | "prawo" |
 | Środek / OK | "ok" |
 
-### Plan działania
+### Plan rozwoju {#plan}
 Planowane pomysły dla tego forka:
 
 - Widok z wielu kamer
@@ -421,7 +421,7 @@ Znalazłeś błąd lub masz pomysł?
 
 Repozytorium: https://github.com/Controli-pl/Pipup-by-Controli
 
-### Wsparcie
+### Wsparcie {#wsparcie}
 
 Czy moja praca była pomocna? Rozważ wsparcie. Dziękuję!
 <a href="https://www.buymeacoffee.com/yourusername" target="_blank">
