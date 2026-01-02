@@ -23,7 +23,7 @@ Ten fork rozszerza oryginalny projekt o **funkcje przyjazne dla Home Assistant**
 - [Podstawowe wyskakujące okienko](#podstawowe-wyskakujące-okienko)
 - [Panel stałych powiadomień](#panel-stałych-powiadomień)
 - [Powiadomienie z akcjami](#powiadomienie-z-akcjami)
-- [Okienko sterowania kamerą (PTZ)](#okienko-sterowania-kamerą)
+- [Okienko sterowania kamerą (PTZ)](#okienko-sterowania-kamerą-ptz)
 - [Plan rozwoju](#plan-rozwoju)
 - [Wsparcie](#wsparcie)
 
@@ -211,7 +211,7 @@ Wyczyść wszystko:
   data: {}
 ```
 
-### Akcje wyskakujących okienek
+### Powiadomienie z akcjami
 akcje są kodowane jako "id:Label|id2:Label2|...".
 
 ```text
