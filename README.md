@@ -122,6 +122,7 @@ Make sure PiPup is allowed to run as a foreground service (no aggressive battery
 
 ## Home Assistant integration
 Below are practical examples for the different features.
+# Of course, change the IP address to your correct one! (for Android TV and HA - for callback)
 
 ### Basic popup
 Simple JSON popup via rest_command:
@@ -168,38 +169,89 @@ rest_command:
         "persistent": true,
         "duration": {{ duration | default(0) }}
       }
-```      
-Remove one persistent entry:
-
-```bash
-curl -X POST http://192.168.1.231:7979/clear \
-  -H "Content-Type: application/json" \
-  -d '{"notificationId": "example_status"}'
-```
-
-Clear all:
-
-```bash
-curl -X POST http://192.168.1.231:7979/clear
-```
-### Actionable popups
-actions are encoded as "id:Label|id2:Label2|...".
-
-```text
-rest_command:
-  pipup_actionable:
+  pipup_persistent_clear_one:
     url: http://192.168.1.231:7979/notify
     method: POST
     content_type: "application/json"
     payload: >
       {
-        "title": "{{ title | default('Action required') }}",
-        "message": "{{ message | default('Choose an option') }}",
-        "duration": {{ duration | default(30) }},
-        "callbackUrl": "http://192.168.1.122:8123/api/webhook/pipup_actions",
-        "actions": "open_gate:Open gate|ignore:Ignore"
+        "notificationId": "{{ id | default('example_status') }}"
       }
+  pipup_persistent_clear_all:
+    url: http://192.168.1.231:7979/notify
+    method: POST
+    content_type: "application/json"
+    payload: >
+      {
+      }
+  pipup_actionable:
+    url: http://192.168.1.231:7979/notify
+    method: POST
+    content_type: "application/json"
+    payload: "{{ payload }}"
 ```
+# Usage:
+
+Create persistent entry:
+
+```text
+service: rest_command.pipup_persistent
+data:
+  title: "Test"
+  message: "This is a basic popup"
+  duration: 8
+  position: 5
+  duration: 60
+  notificationId: 'test'
+```
+Remove one persistent entry:
+
+```text
+service: rest_command.pipup_persistent_clear_one
+data:
+  notificationId: 'test'
+```
+
+Clear all:
+
+```text
+  action: rest_command.pipup_persistent_clear_all
+  metadata: {}
+  data: {}
+```
+### Actionable popups
+actions are encoded as "id:Label|id2:Label2|...".
+
+```text
+  pipup_actionable:
+    url: http://192.168.1.231:7979/notify
+    method: POST
+    content_type: "application/json"
+    payload: "{{ payload }}"
+```
+
+```text
+action: rest_command.pipup_actionable
+data:
+  payload: |
+    {
+      "title": "DOORBELL RINGING",
+      "message": "SOMEONE AT THE DOOR",
+      "duration": 30,
+      "titleSize": "20",
+      "messageSize" : "14",
+      "backgroundColor": "#CC000000",
+      "sound": "doorbell",
+      "actions": [
+        {"id": "open_gate", "label": "Open Gate"},
+        {"id": "camera", "label": "Camera"},
+        {"id": "ignore", "label": "Ignore"}
+      ],
+      "callbackUrl": "http://192.168.1.122:8123/api/webhook/doorbell_action", #Home Assistant IP
+      "notificationId": "doorbell_main"
+    }
+```
+    
 Example automation to handle actions in HA:
 
 ```text
@@ -208,7 +260,7 @@ automation:
     alias: "PiPup – actionable popup handler"
     trigger:
       - platform: webhook
-        webhook_id: pipup_actions
+        webhook_id: doorbell_action
     action:
       - choose:
           - conditions:
@@ -228,14 +280,15 @@ automation:
                   name: "PiPup"
                   message: "User ignored the alert"
 ```
+
 ### Camera Control popup (PTZ)
-The most advanced part: show a camera stream and control PTZ from the remote.
+Show a camera stream and control PTZ from the remote.
 
 1. REST command
 ```text
 rest_command:
   pipup_camera_control:
-    url: http://192.168.1.231:7979/notify
+    url: http://192.168.1.231:7979/notify #Android IP
     method: POST
     content_type: "application/json"
     payload: >
@@ -244,7 +297,7 @@ rest_command:
         "duration": {{ duration | default(120) }},
         "position": {{ position | default(1) }},
         "cameraControl": true,
-        "controlCallbackUrl": "http://192.168.1.122:8123/api/webhook/camera_control",
+        "controlCallbackUrl": "http://192.168.1.122:8123/api/webhook/camera_control", #HA IP
         "notificationId": "camera_view",
         "media": {
           "web": {
@@ -280,10 +333,10 @@ Example usage (3/4 screen, top‑right):
 service: rest_command.pipup_camera_control
 data:
   title: "PTZ Camera"
-  url: "http://192.168.1.122:1984/stream.html?src=PTZ_R_SD"
+  url: "http://192.168.1.122:1984/stream.html?src=PTZ_R_SD" #camera stream
   width: 1440
   height: 810
-  position: 1
+  position: 4
   duration: 120
 ```
 2. PTZ webhook in Home Assistant
@@ -300,7 +353,7 @@ automation:
               - condition: template
                 value_template: "{{ trigger.json.direction == 'up' }}"
             sequence:
-              - service: onvif.ptz
+              - service: onvif.ptz #or other action
                 target:
                   entity_id: camera.ptz_camera
                 data:
