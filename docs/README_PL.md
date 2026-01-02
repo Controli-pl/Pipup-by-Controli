@@ -28,7 +28,7 @@ Ten fork rozszerza oryginalny projekt o **funkcje przyjazne dla Home Assistant**
 - [Wsparcie](#wsparcie)
 
 PiPup działa jako usługa pierwszoplanowa na Android TV i rysuje okna nakładkowe za pomocą `WindowManager`.
-Możesz wywoływać wyskakujące okienka z Home Assistant (lub dowolnego klienta HTTP), wywołując prosty punkt końcowy udostępniany przez wbudowany serwer WWW.
+Możesz wywoływać wyskakujące okienka z Home Assistant (lub dowolnego klienta HTTP), wywołując prosty punkt końcowy udostępniany przez wbudowany serwer.
 
 Domyślny port serwera: **7979**
 Domyślny punkt końcowy: `POST /notify`
