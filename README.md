@@ -75,6 +75,7 @@ This fork focuses on **Home Assistant usage on Android TV** and adds:
 
 ### 2. Persistent notifications panel
 ![Example popup](docs/images/screen12a.png)
+
 Popups can be marked as persistent and will appear as tiles in a top panel.
 Tiles survive app restarts (stored in SharedPreferences).
 Each persistent entry has:
@@ -84,6 +85,7 @@ Each persistent entry has:
 
 ### 3. Actionable popups (buttons)
 ![Example popup](docs/images/screen8a.png)
+
 Popups can include a list of actions with labels and IDs.
 Buttons are focusable and can be navigated by D‑pad.
 When a button is pressed, PiPup calls a callbackUrl with JSON:
