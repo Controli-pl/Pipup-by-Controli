@@ -15,7 +15,7 @@ Ten fork rozszerza oryginalny projekt o **funkcje przyjazne dla Home Assistant**
 
 ## Spis treści
 
-- [Przegląd](#przeglad)
+- [Przegląd](#przegląd)
 - [Oryginalne funkcje](#oryginalne-funkcje)
 - [Ulepszenia w tym forku](#ulepszenia-w-tym-forku)
 - [Instalacja](#instalacja)
