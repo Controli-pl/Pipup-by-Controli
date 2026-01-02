@@ -9,13 +9,13 @@ Ten fork rozszerza oryginalny projekt o **funkcje przyjazne dla Home Assistant**
 - dźwięki powiadomień
 - stałe kafelki
 - przyciski akcji
-- wyskakujące okienko sterowania kamerą z funkcją PTZ.
+- okienko sterowania kamerą z funkcją PTZ.
 
 ![PiPup demo](docs/images/pipup-demo.gif)
 
 ## Spis treści
 
-- [Przegląd](#przegląd)
+- [Przegląd](#przeglad)
 - [Oryginalne funkcje](#oryginalne-funkcje)
 - [Ulepszenia w tym forku](#ulepszenia-w-tym-forku)
 - [Instalacja](#instalacja)
