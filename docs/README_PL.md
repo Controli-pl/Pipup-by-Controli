@@ -15,16 +15,16 @@ Ten fork rozszerza oryginalny projekt o **funkcje przyjazne dla Home Assistant**
 
 ## Spis treści
 
-- [Przegląd](#przeglad)
-- [Oryginalne funkcje](#oryginalne)
-- [Ulepszenia w tym forku](#ulepszenia)
+- [Przegląd](#przegld)
+- [Oryginalne funkcje](#oryginalne-funkcje)
+- [Ulepszenia w tym forku](#ulepszenia-w-tym-forku)
 - [Instalacja](#instalacja)
-- [Integracja z Home Assistant](#integracjja)
-- [Podstawowe wyskakujące okienko](#podstawowe)
-- [Panel stałych powiadomień](#panel)
-- [Powiadomienie z akcjami](#akcje)
-- [Okienko sterowania kamerą (PTZ)](#kamera)
-- [Plan rozwoju](#plan)
+- [Integracja z Home Assistant](#integracja-z-home-assistant)
+- [Podstawowe wyskakujące okienko](#podstawowe-wystakujce-okienko)
+- [Panel stałych powiadomień](#panel-staych-powiadomie)
+- [Powiadomienie z akcjami](#powiadomienie-z-akcjami)
+- [Okienko sterowania kamerą (PTZ)](#okienko-sterowania-kamer)
+- [Plan rozwoju](#plan-rozwoju)
 - [Wsparcie](#wsparcie)
 
 PiPup działa jako usługa pierwszoplanowa na Android TV i rysuje okna nakładkowe za pomocą `WindowManager`.
@@ -33,7 +33,7 @@ Możesz wywoływać wyskakujące okienka z Home Assistant (lub dowolnego klienta
 Domyślny port serwera: **7979**
 Domyślny punkt końcowy: `POST /notify`
 
-## Oryginalne funkcje {#oryginalne}
+## Oryginalne funkcje
 
 Oryginalny (źródło projektu PiPup: https://github.com/gmcmicken/PiPup) oferuje już:
 
@@ -48,7 +48,7 @@ Jeśli potrzebujesz tylko podstawowych okienek z obrazami/tekstem, nadal obowią
 
 ---
 
-## Ulepszenia w tym forku {#ulepszenia}
+## Ulepszenia w tym forku
 
 Ten fork koncentruje się na **korzystaniu z Home Assistant na Android TV** i dodaje:
 
@@ -99,7 +99,7 @@ góra / dół / lewo / prawo / OK.
 Rozmiar i położenie wyskakującego okienka można skonfigurować w HA.
 Prawidłowe czyszczenie, aby zatrzymać dźwięk z kamery po zamknięciu wyskakującego okienka.
 
-## Instalacja {#instalacja}
+## Instalacja
 Włącz instalowanie aplikacji z nieznanych źródeł na telewizorze z systemem Android.
 
 [Pobierz APK](https://github.com/Controli-pl/Pipup-by-Controli/releases/latest/download/pipup-controli.apk)
@@ -112,7 +112,7 @@ Udziel uprawnień do nakładki (SYSTEM_ALERT_WINDOW) — wyświetlanie na innych
 
 Upewnij się, że PiPup może działać jako usługa na pierwszym planie (bez agresywnych programów wyczerpujących baterię).
 
-## Integracja z Home Assistant {#integracja}
+## Integracja z Home Assistant
 Poniżej znajdują się praktyczne przykłady różnych funkcji.
 # Oczywiście zmień adres IP na poprawny! (dla Android TV i HA - do wywołania zwrotnego)
 
@@ -142,7 +142,7 @@ data:
   duration: 8
   position: 5
 ```
-### Panel stałych powiadomień {#panel}
+### Panel stałych powiadomień
 Każdy stały element jest przechowywany z identyfikatorem powiadomienia i opcjonalnie może wygasnąć po upływie określonej liczby sekund.
 ```text
 rest_command:
@@ -211,7 +211,7 @@ Wyczyść wszystko:
   data: {}
 ```
 
-### Akcje wyskakujących okienek {#akcje}
+### Akcje wyskakujących okienek
 akcje są kodowane jako "id:Label|id2:Label2|...".
 
 ```text
@@ -273,7 +273,7 @@ automation:
                   message: "User ignored the alert"
 ```
 
-### Okienko sterowania kamerą (PTZ) {#kamera}
+### Okienko sterowania kamerą (PTZ)
 Wyświetl strumień z kamery i steruj PTZ zdalnie.
 
 1. Polecenie REST
@@ -401,7 +401,7 @@ Mapowanie zdalne:
 | Prawo | "prawo" |
 | Środek / OK | "ok" |
 
-### Plan rozwoju {#plan}
+### Plan rozwoju
 Planowane pomysły dla tego forka:
 
 - Widok z wielu kamer
@@ -421,7 +421,7 @@ Znalazłeś błąd lub masz pomysł?
 
 Repozytorium: https://github.com/Controli-pl/Pipup-by-Controli
 
-### Wsparcie {#wsparcie}
+### Wsparcie
 
 Czy moja praca była pomocna? Rozważ wsparcie. Dziękuję!
 <a href="https://www.buymeacoffee.com/yourusername" target="_blank">
