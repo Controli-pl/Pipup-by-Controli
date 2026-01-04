@@ -4,10 +4,10 @@
   <img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" alt="Buy Me A Coffee" height="40" >
 </a>
 
-PiPup to usługa nakładki na Android TV, która może wyświetlać rozbudowane wyskakujące okienka na dowolnej aplikacji.
+PiPup to nakładka na Android TV, która może wyświetlać rozbudowane wyskakujące okienka (powiadomienia) na dowolnej aplikacji (TV,netfix,itd.)
 Ten fork rozszerza oryginalny projekt o **funkcje przyjazne dla Home Assistant**, takie jak:
 - dźwięki powiadomień
-- stałe kafelki
+- stałe kafelki powiadomień / informacji
 - przyciski akcji
 - okienko sterowania kamerą z funkcją PTZ.
 
@@ -50,7 +50,7 @@ Jeśli potrzebujesz tylko podstawowych okienek z obrazami/tekstem...
 
 ## Ulepszenia w tym forku
 
-Ten fork koncentruje się na **współpracy z Home Assistant na Android TV** i dodaje:
+Ten fork koncentruje się na **współpracy z Home Assistant** i dodaje:
 
 ### 1. Dźwięki powiadomień
 
@@ -69,10 +69,10 @@ Ten fork koncentruje się na **współpracy z Home Assistant na Android TV** i d
 
 ![Example popup](images/screen12a.png)
 
-Powiadomienie można oznaczyć jako stałe i będą one wyświetlane jako kafelki w górnym panelu.
+Powiadomienie można oznaczyć jako stałe, by były one wyświetlane jako kafelki w górnym panelu.
 Kafelki są odporne na ponowne uruchomienie aplikacji (przechowywane w SharedPreferences).
-Każdy trwały wpis zawiera:
-- notificationId
+Każde stałe powiadomienie zawiera:
+- identyfikator
 - czas trwania (opcjonalnie z automatycznym wygaśnięciem)
 - znaczniki czasu, aby przywrócić pozostały czas po ponownym uruchomieniu.
 
@@ -92,25 +92,25 @@ Idealnie pasuje to do webhooków Home Assistant / automatyzacji REST.
 ### 4. Wyskakujące okienko sterowania kamerą (PTZ)
 Specjalny tryb wyskakującego okienka z wbudowanym WebView dla strumienia kamery.
 
-Używa pilota telewizora do wysyłania poleceń PTZ z powrotem do Home Assistant:
+Można używć pilota telewizora do wysyłania poleceń PTZ z powrotem do Home Assistant:
 
 góra / dół / lewo / prawo / OK.
 
 Rozmiar i położenie wyskakującego okienka można skonfigurować w HA.
-Prawidłowe czyszczenie, aby zatrzymać dźwięk z kamery po zamknięciu wyskakującego okienka.
+Klawisz "wstecz" wyłacza podgląd.
 
 ## Instalacja
 Włącz instalowanie aplikacji z nieznanych źródeł na telewizorze z systemem Android.
 
 [Pobierz APK](https://github.com/Controli-pl/Pipup-by-Controli/releases/latest/download/pipup-controli.apk)
 
-Zainstaluj.
+Zainstaluj (sideload lub dowolny innysposób).
 
-Udziel uprawnień do nakładki (SYSTEM_ALERT_WINDOW) — wyświetlanie na innych aplikacjach.
+Udziel uprawnień do wyświetlania nad innymi aplikacjami (SYSTEM_ALERT_WINDOW).
 
 ![Example popup](images/uprawnienia.png)
 
-Upewnij się, że PiPup może działać jako usługa na pierwszym planie (bez agresywnych programów wyczerpujących baterię).
+Upewnij się, że PiPup może działać jako usługa na pierwszym planie (bez agresywnego oszczędzania baterii).
 
 ## Integracja z Home Assistant
 Poniżej znajdują się praktyczne przykłady różnych funkcji.
@@ -215,14 +215,6 @@ Wyczyść wszystko:
 akcje są kodowane jako "id:Label|id2:Label2|...".
 
 ```text
-  pipup_actionable:
-    url: http://192.168.1.231:7979/notify
-    method: POST
-    content_type: "application/json"
-    payload: "{{ payload }}"
-```
-
-```text
 action: rest_command.pipup_actionable
 data:
   payload: |
@@ -274,7 +266,7 @@ automation:
 ```
 
 ### Okienko sterowania kamerą (PTZ)
-Wyświetl strumień z kamery i steruj PTZ zdalnie.
+Wyświetla strumień z kamery i umożliwia kontrolę PTZ za pomocą pilota.
 
 1. Polecenie REST
 ```text
@@ -342,7 +334,7 @@ automation:
               - condition: template
                 value_template: "{{ trigger.json.direction == 'up' }}"
             sequence:
-              - service: onvif.ptz #or other action
+              - service: onvif.ptz #lub inne akcje do kontroli kamery
                 target:
                   entity_id: camera.ptz_camera
                 data:
@@ -393,12 +385,12 @@ automation:
                   move_mode: GotoHome
 ```
 Mapowanie zdalne:
-| Przycisk zdalny | Ładunek kierunkowy |
+| Przycisk zdalny | parametr zwracany |
 | ------------- | ----------------- |
-| Góra | "góra" |
-| Dół | "dół" |
-| Lewo | "lewo" |
-| Prawo | "prawo" |
+| Góra | "up" |
+| Dół | "down" |
+| Lewo | "left" |
+| Prawo | "right" |
 | Środek / OK | "ok" |
 
 ### Plan rozwoju
@@ -406,11 +398,12 @@ Planowane pomysły dla tego forka:
 
 - Widok z wielu kamer
 - Siatka 2×2 / 3×3 z wieloma kamerami.
-- Nawigacja krzyżakiem między kafelkami, OK = powiększenie wybranej kamery.
+- Nawigacja guzikiem nawigacji między kafelkami, OK = powiększenie wybranej kamery.
 - Mapowanie przybliżania/oddalania (np. zwiększanie/zmniejszanie głośności) tam, gdzie obsługuje to PTZ.
-- Eksportowalne plany Home Assistant dla typowych scenariuszy (dzwonek do drzwi, ruch, watchdog).
+- Schematy (blueprint) dla Home Assistant dla typowych scenariuszy (dzwonek do drzwi, ruch, watchdog).
 - Opcjonalny interfejs sterowania MQTT.
-- Trwała animacja powiadomienia (przypomnienie)
+- Trwała animacja powiadomienia (przypomnienie).
+- ...
 
 
 ### Opinia
