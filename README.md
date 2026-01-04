@@ -2,6 +2,7 @@
 <a href="https://www.buymeacoffee.com/yourusername" target="_blank">
   <img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" alt="Buy Me A Coffee" height="40" >
 </a>
+
 [Polska wersja językowa](docs/README_PL.md)
 
 PiPup is an Android TV overlay service that can display rich popups over any app.  
