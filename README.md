@@ -224,14 +224,6 @@ Clear all:
 actions are encoded as "id:Label|id2:Label2|...".
 
 ```text
-  pipup_actionable:
-    url: http://192.168.1.231:7979/notify
-    method: POST
-    content_type: "application/json"
-    payload: "{{ payload }}"
-```
-
-```text
 action: rest_command.pipup_actionable
 data:
   payload: |
