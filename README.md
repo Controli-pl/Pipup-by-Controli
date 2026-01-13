@@ -1,5 +1,5 @@
 # PiPup – Android TV overlay for Home Assistant
-<a href="https://www.buymeacoffee.com/yourusername" target="_blank">
+<a href="https://www.buymeacoffee.com/controli" target="_blank">
   <img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" alt="Buy Me A Coffee" height="40" >
 </a>
 
@@ -434,6 +434,6 @@ Repository: https://github.com/Controli-pl/Pipup-by-Controli
 
 Was my work helpful? Please consider supporting it. Thank you!
 
-<a href="https://www.buymeacoffee.com/yourusername" target="_blank">
+<a href="https://www.buymeacoffee.com/controli" target="_blank">
   <img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" alt="Buy Me A Coffee" height="40" >
 </a>
