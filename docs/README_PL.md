@@ -1,6 +1,6 @@
 # PiPup – nakładka na Android TV dla Home Assistant (pl)
 
-<a href="https://www.buymeacoffee.com/yourusername" target="_blank">
+<a href="https://www.buymeacoffee.com/controli" target="_blank">
   <img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" alt="Buy Me A Coffee" height="40" >
 </a>
 
@@ -422,7 +422,7 @@ Repozytorium: https://github.com/Controli-pl/Pipup-by-Controli
 Czy moja praca była pomocna? Rozważ wsparcie. 
 Dziękuję!
 
-<a href="https://www.buymeacoffee.com/yourusername" target="_blank">
+<a href="https://www.buymeacoffee.com/controli" target="_blank">
   <img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png" alt="Buy Me A Coffee" height="40" >
 </a>
 
